@@ -24,7 +24,7 @@ class ValidationRule {
         for rule in rules {
             var isValid:Bool = rule.validate(textField.text)
             if !isValid {
-                return ValidationError(textField: self.textField, error: rule.errorMessage())
+                return ValidationError(textField: self.textField, error: rule.errorMessage(), rule: rule)
             }
         }
         return nil

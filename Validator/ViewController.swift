@@ -84,6 +84,16 @@ class ViewController: UIViewController , ValidationDelegate, UITextFieldDelegate
     
     private func setErrors(){
         for (field, error) in validator.errors {
+            println("Error from rule: \(error.rule) for text field: \(error.textField)")
+            /*
+            // Conditional display
+            // Disable before the line below: error.errorLabel?.text = error.errorMessage
+            if error.rule is RequiredRule && error.textField == emailTextField {
+                error.errorLabel?.text = "Email required"
+            } else if error.rule is EmailRule && error.textField == emailTextField {
+                error.errorLabel?.text = "Email is not valid"
+            }
+            */
             field.layer.borderColor = UIColor.redColor().CGColor
             field.layer.borderWidth = 1.0
             error.errorLabel?.text = error.errorMessage

@@ -13,10 +13,12 @@ class ValidationError {
     let textField:UITextField
     var errorLabel:UILabel?
     let errorMessage:String
+    let rule: Rule
     
-    init(textField:UITextField, error:String){
+    init(textField:UITextField, error:String, rule: Rule){
         self.textField = textField
         self.errorMessage = error
+        self.rule = rule
     }
     
 }
